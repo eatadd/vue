@@ -4,7 +4,6 @@
         <!--<router-link to="/home/news">新闻</router-link>-->
         <!--|-->
         <!--<router-link to="/home/message">消息</router-link>-->
-
         <button @click="newsclick">首页</button>
         <button @click="messageclick">关于</button>
         <router-view></router-view>
