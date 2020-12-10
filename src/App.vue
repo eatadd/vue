@@ -26,6 +26,6 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
-  font-size: 100px;
+  font-size: 120px;
 }
 </style>
