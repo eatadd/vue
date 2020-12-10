@@ -19,7 +19,7 @@
         },
         methods: {
             showmsg() {
-                console.log(this);
+                // console.log(this);
             },
             newsclick() {
                 this.$router.push('/home/news')
