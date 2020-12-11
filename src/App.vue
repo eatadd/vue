@@ -6,7 +6,12 @@
         <button @click="aboutclick">关于</button>
         <button @click="userclick">用户</button>
     </div>
-    <router-view/>
+    <!--<router-view/>-->
+    <router-view v-slot="{ Component }">
+        <keep-alive include="Home,About">
+            <component class="view" :is="Component"/>
+        </keep-alive>
+    </router-view>
 </template>
 <script>
     export default {
@@ -21,7 +26,7 @@
                 this.$router.replace('/about')
             },
             userclick() {
-                this.$router.push({name: 'User', params: {userid: 1, username: 'zq'}})
+                this.$router.push({name: 'User', params: {id: 1, username: 'zq'}})
                 // this.$router.replace('/user')
             }
         }

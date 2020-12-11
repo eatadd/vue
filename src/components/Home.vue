@@ -4,8 +4,8 @@
         <!--<router-link to="/home/news">新闻</router-link>-->
         <!--|-->
         <!--<router-link to="/home/message">消息</router-link>-->
-        <button @click="newsclick">首页</button>
-        <button @click="messageclick">关于</button>
+        <button @click="newsclick">news</button>
+        <button @click="messageclick">message</button>
         <router-view></router-view>
     </div>
 </template>
@@ -19,7 +19,7 @@
         },
         methods: {
             showmsg() {
-                // console.log(this);
+                console.log(this);
             },
             newsclick() {
                 this.$router.push('/home/news')
@@ -27,6 +27,12 @@
             messageclick() {
                 this.$router.push('/home/message')
             }
+        },
+        setup() {
+            console.log("创建");
+        },
+        unmounted() {
+            console.log("销毁");
         }
     }
 </script>

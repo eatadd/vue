@@ -2,8 +2,8 @@
     <div>
         <h2>我是用户界面</h2>
         <p>我是用户界面的内容</p>
-        {{userid}}
-        {{username}}
+        <p>this.$route.params.id {{$route.params.id}}</p>
+        <p>$route.params.username: {{$route.params.username}}</p>
     </div>
 </template>
 
@@ -16,14 +16,21 @@
                 username: 0
             }
         },
-        created(){
+        created() {
             this.showuser();
         },
         methods: {
             showuser() {
-                this.userid = this.$route.params.userid;
-                this.username = this.$route.params.username;
+                this.id = this.$route.params.id;
+                // this.userid = this.$route.query.id;
+                // this.username = this.$route.query.username;
             }
+        },
+        setup() {
+            console.log("user创建");
+        },
+        unmounted() {
+            console.log("user销毁");
         }
     }
 </script>
